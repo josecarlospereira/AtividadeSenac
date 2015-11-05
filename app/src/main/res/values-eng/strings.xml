@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">IMC</string>
+    <string name="action_settings">Settings</string>
+    <string name="massa">Your weight: </string>
+    <string name="altura">Your height: </string>
+    <string name="calc">Calc</string>
+    <string name="kg">kilogram</string>
+    <string name="mt">meter</string>
+</resources>
