@@ -6,4 +6,5 @@
     <string name="calc">Calc</string>
     <string name="kg">kilogram</string>
     <string name="mt">meter</string>
+    <string name="total">Your IMC is: </string>
 </resources>

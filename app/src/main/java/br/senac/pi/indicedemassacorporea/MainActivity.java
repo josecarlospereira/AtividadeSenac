@@ -12,6 +12,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -33,7 +35,34 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        findViewById(R.id.BotaoCalcular).setOnClickListener(calcular());
     }
+
+    private View.OnClickListener calcular(){
+        return new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                EditText kg = (EditText) findViewById(R.id.kg);
+                EditText met_alt = (EditText) findViewById(R.id.met_alt);
+                TextView txtResultado = (TextView) findViewById(R.id.txtResultado);
+                double kilo = Double.parseDouble(kg.getText().toString());
+                double metro = Double.parseDouble(met_alt.getText().toString());
+                double total = kilo / (metro * metro);
+
+                if (total <= 18.5) {
+                    txtResultado.setText(getString(R.string.total) + " " + String.format("%.2f", total) + "\nAbaixo do Peso");
+                }else if (total > 18.5 && total <= 25){
+                    txtResultado.setText(getString(R.string.total) + " " + String.format("%.2f", total) + "\nPeso Normal");
+                }else if (total > 25 && total <= 30){
+                    txtResultado.setText(getString(R.string.total) + " " + String.format("%.2f", total) + "\nAcima do Peso");
+                }else{
+                    txtResultado.setText(getString(R.string.total) + " " + String.format("%.2f", total) + "\nObeso");
+                }
+            }
+        };
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

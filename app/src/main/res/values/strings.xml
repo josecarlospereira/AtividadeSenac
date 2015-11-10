@@ -6,5 +6,5 @@
     <string name="calc">Calcular</string>
     <string name="kg">kilograma</string>
     <string name="mt">metro</string>
-    <string name="inf">Por eu não conseguir lembrar de alguns códigos, só ha a parte de design no programa!</string>
+    <string name="total">O seu IMC é: </string>
 </resources>
